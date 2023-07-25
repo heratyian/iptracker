@@ -1,2 +1,3 @@
-<h1>IP Address</h1>
-<p>Your IP Address: <%= @response %></p>
+<h1>IP Address Lookup</h1>
+<p>Your IP Address (<%= @ip_lookup.dig("type") %>): <%= @ip_lookup.dig("ip") %></p>
+<p>Your location: <%= @ip_lookup.dig("city") %>, <%= @ip_lookup.dig("region_name") %> <%= @ip_lookup.dig("country_name") %> <%= @ip_lookup.dig("location", "country_flag_emoji") %></p>
