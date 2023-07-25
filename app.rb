@@ -1,9 +1,12 @@
 require "sinatra"
 require "sinatra/reloader"
+require "./services/ipstack"
 
 get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+  ip_address = request.env.dig("HTTP_X_REAL_IP")
+
+  # fetch info on ip address
+  @response = IPStack.lookup(ip_address)
+
+  erb(:root)
 end
