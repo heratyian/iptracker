@@ -1,3 +1,9 @@
 <h1>IP Address Lookup</h1>
-<p>Your IP Address (<%= @ip_lookup.dig("type") %>): <%= @ip_lookup.dig("ip") %></p>
-<p>Your location: <%= @ip_lookup.dig("city") %>, <%= @ip_lookup.dig("region_name") %> <%= @ip_lookup.dig("country_name") %> <%= @ip_lookup.dig("location", "country_flag_emoji") %></p>
+<p>IP Address (<%= @ip_lookup.dig("type") %>): <%= @ip_lookup.dig("ip") %></p>
+<p>Location: <%= @ip_lookup.dig("city") %>, <%= @ip_lookup.dig("region_name") %> <%= @ip_lookup.dig("country_name") %> <%= @ip_lookup.dig("location", "country_flag_emoji") %></p>
+
+<form action="/">
+  <label for="ip-address-input">IP Address:</label>
+  <input type="text" id="ip-address-input" name="ip" />
+  <button>Send</button>
+</form>
